@@ -1,0 +1,10 @@
+.nextButton {
+    background-color: #8DCB89;
+    width: 150px;
+    height: 40px;
+    border:0px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
