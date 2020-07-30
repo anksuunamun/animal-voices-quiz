@@ -10,7 +10,8 @@ import NextButtonContainer from '../NextButton/NextButtonContainer';
 
 const WarmUp = (props) => {
   let currentBird = props.birds[props.questionNumber];
-  console.log()
+  let answers =  props.birds.map((bird)=> { return bird.name})
+  
   return(
     <>
     <div className="questionWrapper">
@@ -20,7 +21,7 @@ const WarmUp = (props) => {
     </div>
     <div className="answersWrapper">
       <div className="contentWrapper">
-        <div className="rounded blockBackgroundcolor"><AnswersContainer /></div>
+        <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers}/></div>
         <div className="rounded blockBackgroundcolor"><DescriptionContainer /></div>
       </div>
     </div>

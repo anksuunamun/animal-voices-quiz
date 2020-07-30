@@ -1,18 +1,18 @@
 import React from 'react';
 
 
-const Answers = () => {
+const Answers = (props) => {
+    console.log(props)
     return (
-        <div>
+        <>
             <ul>
-                <li>Зяблик</li>
-                <li>Клёст</li>
-                <li>Горлица</li>
-                <li>Дятел</li>
-                <li>Удод</li>
-                <li>Стриж</li>
+                {props.answers.map(
+                    answer => {
+                        return <li>{answer}</li>
+                    }
+                )}
             </ul>
-        </div>
+        </>
     )
 }
 
