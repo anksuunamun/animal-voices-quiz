@@ -34,6 +34,10 @@
     background-color: #008966;
     border-color: #007c5d;
 }
+.questionPannel a {
+    text-decoration: none;
+    color: white;
+}
 
 .pannelItem {
     display: grid;

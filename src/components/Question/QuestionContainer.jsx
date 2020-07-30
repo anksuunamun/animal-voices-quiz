@@ -2,11 +2,12 @@ import React from 'react';
 import Question from './Question';
 
 
-const QuestionContainer = () => {
+const QuestionContainer = (props) => {
     return (
-        <Question />
+        <Question {...props} />
     )
 }
+
 
 
 export default QuestionContainer;

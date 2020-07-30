@@ -3,13 +3,18 @@ import styles from './Question.module.css';
 
 
 
-const Question = () => {
+const Question = (props) => {
+    console.log(props)
     return (
         <div className={styles.questionWrapper}>
-            <img src="https://image.flaticon.com/icons/svg/1629/1629330.svg" alt="unknownBird"/>
+            {props.isCorrect? <img src = {props.image} alt={`${props.name}фото`}/> :
+            <img src="https://birds-quiz.netlify.app//static/media/bird.06a46938.jpg" alt="unknownBird"/>}
             <div className={styles.songWrapper}>
-                <div>******</div>
-                <div>Player</div>
+                {props.isCorrect? <div>{props.name}</div> :
+                <div>******</div>}
+                <audio controls>
+                    <source src={props.audio} type="audio/mpeg"></source>
+                </audio>
             </div>
         </div>
     )

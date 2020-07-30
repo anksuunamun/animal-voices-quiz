@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -12,12 +13,12 @@ const Header = () => {
                 <div className={styles.scorePannel}>Score: </div>
             </div>
             <div className={`${styles.questionPannel} rounded`}>
-                <div className={styles.pannelItem}>Разминка</div>
-                <div className={styles.pannelItem}>Воробьиные</div>
-                <div className={styles.pannelItem}>Лесные птицы</div>
-                <div className={styles.pannelItem}>Певчие птицы</div>
-                <div className={styles.pannelItem}>Хищные птицы</div>
-                <div className={styles.pannelItem}>Морские птицы</div>
+                <NavLink className={styles.pannelItem} to="/warmup" >Разминка</NavLink>
+                <a className={styles.pannelItem} href="/#" >Воробьиные</a>
+                <a className={styles.pannelItem} href="/#" >Лесные птицы</a>
+                <a className={styles.pannelItem} href="/#" >Певчие птицы</a>
+                <a className={styles.pannelItem} href="/#" >Хищные птицы</a>
+                <a className={styles.pannelItem} href="/#" >Морские птицы</a>
             </div>
         </div>
     )
