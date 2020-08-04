@@ -1,10 +1,34 @@
+function randomQuestion(min, max) {
+  let randQuestion = min + Math.random() * (max + 1 - min);
+  return Math.floor(randQuestion);
+}
 
+const CURRENT_BIRD = "CURRENT_BIRD";
+const BIRD_DESCRIPTION_ID = "BIRD_DESCRIPTION_ID";
+
+
+export const currentBirdAC = (name) => {
+  return {
+      type: CURRENT_BIRD,
+      name
+  }
+}
+
+export const birdDescriptionIdAC = (id) => {
+  return {
+    type: BIRD_DESCRIPTION_ID,
+    id
+  }
+}
 
 
 
 let initialState = {
     "isCorrect": false,
-    "questionNumber": 0,
+    "questionNumber": randomQuestion(0, 5),
+    "currentBirdName": "",
+    "birdDescriptionId": "",
+    "birdDescription": "",
     "birds" : [       
         {
           id: 1,
@@ -59,6 +83,17 @@ let initialState = {
 
 const warmupReducer = (state = initialState, action) => {
     switch (action.type) {
+        case (CURRENT_BIRD): {
+          let localState = {...state};
+          localState.currentBirdName = action.name;
+          return localState;
+        }
+        case (BIRD_DESCRIPTION_ID) : {
+          let localeState = {...state};
+          localeState.birdDescriptionId = action.id;
+          localeState.birdDescription = localeState.birds[action.id - 1]
+          return localeState;
+        }
         default: return state;
     }
 }

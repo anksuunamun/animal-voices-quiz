@@ -1,20 +1,40 @@
 import React from 'react';
 import styles from './Description.module.css'
+import BirdDescription from './BirdDescription/BirdDescription';
 
 
-const Description = () => {
-    return (
-        <>
-            <div className={styles.descriptionWrapper}>
-                <img src="https://image.flaticon.com/icons/svg/1629/1629330.svg" alt="current bird"/>
-                <div className={styles.birdNameWrapper}>
-                    <p>Клёст</p>
-                    <p>Loxia curvirostra</p>
-                    <div>Player</div>
-                </div>
-            </div>
-            <p>Клестов называют «рождественскими» птицами. В естественных условиях они дают потомство зимой – в январе. Эти птицы утепляют свои гнезда мхом и шерстью животных, потому птенцам не холодно. В поисках шишек клесты могут улетать за 3500 км от гнезда.</p>
-        </>
-    )
+class Description extends React.Component {
+    
+   state = {
+       "birdDescriptionId": this.props.birdDescriptionId,
+   }
+   
+    render()
+    
+   { if(this.state.birdDescriptionId === "" && !this.props.isCorrect) {
+    console.log(this.props)
+       return(<div>
+            <p>Послушайте плеер.</p>
+            <p>Выберите птицу из списка</p>
+        </div>)
+    }
+    else if (this.props.isCorrect) {
+        return(
+
+            <BirdDescription {...this.props.bird}/>
+   
+        )
+    }
+    else if (this.state.birdDescriptionId !== "" && !this.props.isCorrect) {
+        return (
+            <div></div>
+        )
+    }
+  }
+
+            
+             
+        
+    
 }
 export default Description;

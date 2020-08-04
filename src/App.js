@@ -18,7 +18,7 @@ const App = (props) => {
           <HeaderContainer />
         </div>
       </div>
-      <Route path="/warmup" render={ () => <WarmUp /> } />
+      <WarmUp />
       
     </BrowserRouter>
     </>

@@ -4,7 +4,7 @@ import styles from './Question.module.css';
 
 
 const Question = (props) => {
-    
+    props.setCurrentBird(props.name);
     return (
         <div className={styles.questionWrapper}>
             {props.isCorrect? <img src = {props.image} alt={`${props.name}фото`}/> :

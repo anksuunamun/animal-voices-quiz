@@ -10,7 +10,7 @@ import NextButtonContainer from '../NextButton/NextButtonContainer';
 
 const WarmUp = (props) => {
   let currentBird = props.birds[props.questionNumber];
-  let answers =  props.birds.map((bird)=> { return bird.name})
+  let answers =  props.birds.map((bird)=> { return [bird.name, bird.id]})
   
   return(
     <>

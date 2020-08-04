@@ -1,0 +1,8 @@
+.answerOptions {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(1fr, 6);
+    border: 1px solid #999;
+  
+}
+

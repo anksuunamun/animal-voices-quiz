@@ -1,13 +1,31 @@
 import React from 'react';
 import Question from './Question';
+import { connect } from 'react-redux';
+import { currentBirdAC } from '../../redux/WarmUp-reducer';
 
 
-const QuestionContainer = (props) => {
-    return (
-        <Question {...props} />
-    )
+class QuestionContainer extends React.Component {
+    
+    render() {
+        
+        return (
+            <Question {...this.props}/>
+        )
+    }
 }
 
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        "setCurrentBird": currentBirdAC,
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionContainer);
 
 
-export default QuestionContainer;
