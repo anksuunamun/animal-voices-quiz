@@ -5,8 +5,9 @@ import { nextLevelAC } from '../../redux/WarmUp-reducer';
 
 
 const NextButtonContainer = (props) => {
+    
     return (
-        <NextButton {...props}/>
+        <NextButton  {...props}/>
     )
 }
 

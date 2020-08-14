@@ -6,7 +6,6 @@ const Answer = (props) => {
     
     let onOptionClick = () => {
         props.setDescriptionBirdId(props.answer[1]);
-        console.log(props)
         setBirdThunk(props.answer[1])
     }
     return(

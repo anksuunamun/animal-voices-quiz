@@ -6,6 +6,7 @@ const NextButton = (props) => {
     const onNextButtonClick = () => {
         props.nextLevelAC();
     }
+    
 
     return(
             <>

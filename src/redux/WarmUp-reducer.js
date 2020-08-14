@@ -118,23 +118,23 @@ const warmupReducer = (state = initialState, action) => {
         }
         case (NEXT_LEVEL) : {
           let localState = {...state};
-
+          
           if (localState.counter <6) {
+            localState.gameOver = false;
             localState.isCorrect = false;
             localState.currentBirdName = "";
             localState.birdDescriptionId = "";
             localState.birdDescription = "";
-            localState.counter += 1;
+            
             localState.birds = birdsData[localState.counter];
-          }
-          else if (localState.counter===6) {
             localState.counter += 1;
+          }
+          if (localState.counter===6) {
+            localState.isCorrect = true;
             localState.gameOver = true;
+            localState.counter  = 0; 
           }
-          else if (localState.counter ===7) {
-            localState.counter = 0;
-            localState.gameOver = false;
-          }
+
           return localState;
         }
         default: return state;

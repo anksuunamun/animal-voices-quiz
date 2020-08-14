@@ -39,7 +39,11 @@ const WarmUp = (props) => {
   )}
   else {
     return(
-      <div>WIN</div>
+      <div className="buttonWrapper">
+        <div className="contentWrapper">
+          <NextButtonContainer />
+        </div>
+      </div>
     )
   }
   

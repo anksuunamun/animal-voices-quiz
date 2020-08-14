@@ -25,7 +25,6 @@ class Description extends React.Component {
   
    
     render(){ 
-        console.log(this.state)
          if(this.state.birdDescriptionId === "" && !this.state.isCorrect) {
     
        return(<div>
