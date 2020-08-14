@@ -1,6 +1,6 @@
 import React from 'react'; 
 import Answers from './Answers';
-import { birdDescriptionIdAC } from '../../redux/WarmUp-reducer';
+import { birdDescriptionIdAC, setScore } from '../../redux/WarmUp-reducer';
 import { connect } from 'react-redux';
 
 
@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         "setDescriptionBirdId": (id) => dispatch(birdDescriptionIdAC(id)),
+        "setScore": () => {dispatch(setScore())},
     }
 }
 

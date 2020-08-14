@@ -5,12 +5,12 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className={styles.headerWrapper}>
             <div className={styles.topPannel}>
                 <img className={styles.logo} src="https://birds-quiz.netlify.app//static/media/logo.4f82cd73.svg" alt="logo"/>
-                <div className={styles.scorePannel}>Score: </div>
+                <div className={styles.scorePannel}>Score: {props.score} </div>
             </div>
             <div className={`${styles.questionPannel} rounded`}>
                 <NavLink className={styles.pannelItem} to="/warmup" >Разминка</NavLink>

@@ -7,7 +7,7 @@ const Answers = (props) => {
         <div className={`${styles.answerOptions} rounded`}>
                 {props.answers.map(
                     answer => {
-                        return <Answer answer={answer} setDescriptionBirdId={props.setDescriptionBirdId}/>
+                        return <Answer answer={answer} setDescriptionBirdId={props.setDescriptionBirdId} setScore={props.setScore}/>
                     }
                 )}
         </div>

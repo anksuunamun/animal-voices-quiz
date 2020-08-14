@@ -8,7 +8,7 @@ function randomQuestion(min, max) {
 const CURRENT_BIRD = "CURRENT_BIRD";
 const BIRD_DESCRIPTION_ID = "BIRD_DESCRIPTION_ID";
 const NEXT_LEVEL = "NEXT_LEEVEL";
-
+const SET_SCORE = "SET_SCORE";
 
 export const currentBirdAC = (id) => {
   return {
@@ -38,11 +38,19 @@ export const nextLevelAC = () => {
   }
 }
 
+export const setScore = () => {
+  return {
+    type: SET_SCORE
+  }
+}
+
 
 
 let initialState = {
+    "score": 0,
+    "defaultScore": 5,
     "gameOver": false,
-    "counter": 0,
+    "counter": 1,
     "isCorrect": false,
     "questionNumber": randomQuestion(0, 5),
     "currentBirdName": "",
@@ -128,6 +136,9 @@ const warmupReducer = (state = initialState, action) => {
             
             localState.birds = birdsData[localState.counter];
             localState.counter += 1;
+ 
+
+            
           }
           if (localState.counter===6) {
             localState.isCorrect = true;
@@ -136,6 +147,15 @@ const warmupReducer = (state = initialState, action) => {
           }
 
           return localState;
+        }
+        case (SET_SCORE): {
+          let localState = {...state};
+          if(!localState.isCorrect) {
+            localState.defaultScore -= 1;
+          }
+          else if (localState.isCorrect) {
+            localState.score = localState.defaultScore;
+          }
         }
         default: return state;
     }
