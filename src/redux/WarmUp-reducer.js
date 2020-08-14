@@ -40,13 +40,14 @@ export const nextLevelAC = () => {
 
 export const setScore = () => {
   return {
-    type: SET_SCORE
+    type: SET_SCORE,
   }
 }
 
 
 
 let initialState = {
+    "pressedAnswers": [],
     "score": 0,
     "defaultScore": 5,
     "gameOver": false,
@@ -143,19 +144,30 @@ const warmupReducer = (state = initialState, action) => {
           if (localState.counter===6) {
             localState.isCorrect = true;
             localState.gameOver = true;
+            
             localState.counter  = 0; 
+            
           }
-
           return localState;
         }
         case (SET_SCORE): {
           let localState = {...state};
-          if(!localState.isCorrect) {
+          function checkRepeatClick(arr, el) {
+            return arr.some(function(arrEl) {
+              return el === arrEl;
+            })
+          }
+          if(!localState.isCorrect && !checkRepeatClick(localState.pressedAnswers, localState.birdDescriptionId)) {
             localState.defaultScore -= 1;
+            localState.pressedAnswers.push(localState.birdDescriptionId);
+            console.log(localState.pressedAnswers);
           }
           else if (localState.isCorrect) {
-            localState.score = localState.defaultScore;
+            localState.score += localState.defaultScore;
+            localState.pressedAnswers=[];
+            localState.defaultScore = 5;
           }
+          return localState;
         }
         default: return state;
     }

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 class AnswersContainer extends React.Component {
-    
+
     render() {return (
         <Answers {...this.props}/>
     )}
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         "setDescriptionBirdId": (id) => dispatch(birdDescriptionIdAC(id)),
-        "setScore": () => {dispatch(setScore())},
+        "setScore": () => dispatch(setScore()),
     }
 }
 
