@@ -9,10 +9,13 @@ import NextButtonContainer from '../NextButton/NextButtonContainer';
 
 
 const WarmUp = (props) => {
-  let currentBird = props.birds[props.questionNumber];
-  let answers =  props.birds.map((bird)=> { return [bird.name, bird.id]})
+
   
-  return(
+  if (!props.gameOver && props.birds){
+    let currentBird = props.birds[props.questionNumber];
+    let answers =  props.birds.map((bird)=> { return [bird.name, bird.id]})
+   return(
+
     <>
     <div className="questionWrapper">
         <div className="contentWrapper rounded blockBackgroundcolor">
@@ -33,7 +36,13 @@ const WarmUp = (props) => {
 
 
     </>
-  )
+  )}
+  else {
+    return(
+      <div>WIN</div>
+    )
+  }
+  
 }
 
 const mapStateToProps = (state) => {
@@ -41,6 +50,7 @@ const mapStateToProps = (state) => {
     "isCorrect": state.warmupPage.isCorrect,
     "birds": state.warmupPage.birds,
     "questionNumber": state.warmupPage.questionNumber,
+    "gameOver": state.warmupPage.gameOver,
   }
 }
 

@@ -1,3 +1,5 @@
+import {birdsData} from '../components/birdsData';
+
 function randomQuestion(min, max) {
   let randQuestion = min + Math.random() * (max + 1 - min);
   return Math.floor(randQuestion);
@@ -5,6 +7,7 @@ function randomQuestion(min, max) {
 
 const CURRENT_BIRD = "CURRENT_BIRD";
 const BIRD_DESCRIPTION_ID = "BIRD_DESCRIPTION_ID";
+const NEXT_LEVEL = "NEXT_LEEVEL";
 
 
 export const currentBirdAC = (id) => {
@@ -29,10 +32,17 @@ export const setBirdThunk = (birdId) => {
   }
 }
 
+export const nextLevelAC = () => {
+  return {
+    type: NEXT_LEVEL,
+  }
+}
+
 
 
 let initialState = {
-    "score": 0,
+    "gameOver": false,
+    "counter": 0,
     "isCorrect": false,
     "questionNumber": randomQuestion(0, 5),
     "currentBirdName": "",
@@ -103,6 +113,27 @@ const warmupReducer = (state = initialState, action) => {
           localState.birdDescription = localState.birds[action.id - 1];
           if (localState.currentBirdName===action.id) {
             localState.isCorrect = true;
+          }
+          return localState;
+        }
+        case (NEXT_LEVEL) : {
+          let localState = {...state};
+
+          if (localState.counter <6) {
+            localState.isCorrect = false;
+            localState.currentBirdName = "";
+            localState.birdDescriptionId = "";
+            localState.birdDescription = "";
+            localState.counter += 1;
+            localState.birds = birdsData[localState.counter];
+          }
+          else if (localState.counter===6) {
+            localState.counter += 1;
+            localState.gameOver = true;
+          }
+          else if (localState.counter ===7) {
+            localState.counter = 0;
+            localState.gameOver = false;
           }
           return localState;
         }
