@@ -1,6 +1,6 @@
 import warmupReducer from "./WarmUp-reducer";
-import { combineReducers, createStore }  from 'redux';
-
+import { combineReducers, createStore, applyMiddleware }  from 'redux';
+import thunkMiddleware from 'redux-thunk';
 
 
 
@@ -10,6 +10,6 @@ let reducers = combineReducers( {
     warmupPage: warmupReducer,
 })
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 export default store;

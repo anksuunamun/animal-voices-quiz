@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        "setDescriptionBirdId": birdDescriptionIdAC,
+        "setDescriptionBirdId": (id) => dispatch(birdDescriptionIdAC(id)),
     }
 }
 

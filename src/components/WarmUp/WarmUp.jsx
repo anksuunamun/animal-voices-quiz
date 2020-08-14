@@ -16,7 +16,7 @@ const WarmUp = (props) => {
     <>
     <div className="questionWrapper">
         <div className="contentWrapper rounded blockBackgroundcolor">
-          <QuestionContainer {...currentBird} isCorrect={props.isCorrect}/>
+          <QuestionContainer {...currentBird}/>
         </div>
     </div>
     <div className="answersWrapper">

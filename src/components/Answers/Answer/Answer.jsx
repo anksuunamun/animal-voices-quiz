@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './Answer.module.css'
+import { setBirdThunk } from '../../../redux/WarmUp-reducer';
 
 const Answer = (props) => {
     
     let onOptionClick = () => {
         props.setDescriptionBirdId(props.answer[1]);
         console.log(props)
+        setBirdThunk(props.answer[1])
     }
     return(
         <>

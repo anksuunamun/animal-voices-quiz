@@ -7,10 +7,10 @@ const CURRENT_BIRD = "CURRENT_BIRD";
 const BIRD_DESCRIPTION_ID = "BIRD_DESCRIPTION_ID";
 
 
-export const currentBirdAC = (name) => {
+export const currentBirdAC = (id) => {
   return {
       type: CURRENT_BIRD,
-      name
+      id
   }
 }
 
@@ -21,9 +21,18 @@ export const birdDescriptionIdAC = (id) => {
   }
 }
 
+export const setBirdThunk = (birdId) => {
+  return (dispatch) => {
+    if (birdId!== this.state.currentBirdName) {
+      birdDescriptionIdAC(birdId);
+    }
+  }
+}
+
 
 
 let initialState = {
+    "score": 0,
     "isCorrect": false,
     "questionNumber": randomQuestion(0, 5),
     "currentBirdName": "",
@@ -85,14 +94,17 @@ const warmupReducer = (state = initialState, action) => {
     switch (action.type) {
         case (CURRENT_BIRD): {
           let localState = {...state};
-          localState.currentBirdName = action.name;
+          localState.currentBirdName = action.id;
           return localState;
         }
         case (BIRD_DESCRIPTION_ID) : {
-          let localeState = {...state};
-          localeState.birdDescriptionId = action.id;
-          localeState.birdDescription = localeState.birds[action.id - 1]
-          return localeState;
+          let localState = {...state};
+          localState.birdDescriptionId = action.id;
+          localState.birdDescription = localState.birds[action.id - 1];
+          if (localState.currentBirdName===action.id) {
+            localState.isCorrect = true;
+          }
+          return localState;
         }
         default: return state;
     }

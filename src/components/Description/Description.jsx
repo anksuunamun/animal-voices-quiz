@@ -3,31 +3,46 @@ import styles from './Description.module.css'
 import BirdDescription from './BirdDescription/BirdDescription';
 
 
+
 class Description extends React.Component {
-    
-   state = {
-       "birdDescriptionId": this.props.birdDescriptionId,
-   }
+    state = {
+        "birdDescriptionId": this.props.birdDescriptionId,
+         "birdDescription": this.props.birdDescription,
+         "isCorrect": this.props.isCorrect,
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps.birdDescriptionId !== this.props.birdDescriptionId) {
+            this.setState(
+                {
+                 "birdDescriptionId": this.props.birdDescriptionId,
+                 "birdDescription": this.props.birdDescription,
+                 "isCorrect": this.props.isCorrect,
+                }
+            )  
+        }
+    }
+  
    
-    render()
+    render(){ 
+        console.log(this.state)
+         if(this.state.birdDescriptionId === "" && !this.state.isCorrect) {
     
-   { if(this.state.birdDescriptionId === "" && !this.props.isCorrect) {
-    console.log(this.props)
        return(<div>
             <p>Послушайте плеер.</p>
             <p>Выберите птицу из списка</p>
         </div>)
     }
-    else if (this.props.isCorrect) {
+    else if (this.state.isCorrect) {
         return(
 
             <BirdDescription {...this.props.bird}/>
    
         )
     }
-    else if (this.state.birdDescriptionId !== "" && !this.props.isCorrect) {
+    else if (this.state.birdDescriptionId !== "" && !this.state.isCorrect) {
         return (
-            <div></div>
+            <BirdDescription {...this.state.birdDescription} />
         )
     }
   }

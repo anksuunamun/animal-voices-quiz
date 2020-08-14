@@ -16,13 +16,13 @@ class QuestionContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        "isCorrect": state.warmupPage.isCorrect,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        "setCurrentBird": currentBirdAC,
+        "setCurrentBird": (id) => dispatch(currentBirdAC(id)),
     }
 }
 
