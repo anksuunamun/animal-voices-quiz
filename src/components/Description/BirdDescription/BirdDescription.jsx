@@ -6,7 +6,7 @@ const BirdDescription = (props) => {
         <>
             <div className={styles.descriptionWrapper}>
             
-                <img src={props.image} alt="current bird"/>
+                <img src={props.image} alt="current bird" className="roundedImage"/>
                 <div className={styles.birdNameWrapper}>
                     <p>{props.name}</p>
                     <p>{props.species}</p>

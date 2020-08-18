@@ -22,6 +22,11 @@ body {
     border-radius: 0.25rem !important;
 }
 
+.roundedImage {
+    border-radius: 10px;
+
+}
+
 .headerWrapper {
     padding-bottom: 25px;
 }

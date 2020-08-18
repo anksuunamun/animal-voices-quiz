@@ -14,7 +14,7 @@ const NextButton = (props) => {
 
     return(
             <>
-            <button disabled={!props.isCorrect} className={styles.nextButton} onClick = {onNextButtonClick}>Next Level</button>
+            <button disabled={!props.isCorrect} className={`${styles.nextButton} rounded`} onClick = {onNextButtonClick}>Next Level</button>
             </>
     )
 }

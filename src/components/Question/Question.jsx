@@ -7,8 +7,8 @@ const Question = (props) => {
     props.setCurrentBird(props.id);
     return (
         <div className={styles.questionWrapper}>
-            {props.isCorrect? <img src = {props.image} alt={`${props.name}фото`}/> :
-            <img src="https://birds-quiz.netlify.app//static/media/bird.06a46938.jpg" alt="unknownBird"/>}
+            {props.isCorrect? <img className="roundedImage" src = {props.image} alt={`${props.name}фото`}/> :
+            <img className="roundedImage" src="https://birds-quiz.netlify.app//static/media/bird.06a46938.jpg" alt="unknownBird"/>}
             <div className={styles.songWrapper}>
                 {props.isCorrect? <div>{props.name}</div> :
                 <div>******</div>}

@@ -2,19 +2,26 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     font-size: 1.3em;
-    min-height: 250px;
+    min-height: 155px;
     align-content: center;
-    column-gap: 20px;
+    column-gap: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .questionWrapper img {
-    max-width: 130px;
+    margin-left: 15px;
     justify-self: center;
+    width: 200px;
+    height: 155px;
+
 }
 
 .songWrapper {
     display: grid;
     grid-template-rows: 1fr 2fr;
+    max-width: 790px;
+   
 }
 
 @media screen and (max-width: 760px) {
