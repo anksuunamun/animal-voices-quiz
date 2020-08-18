@@ -5,6 +5,10 @@ import styles from './NextButton.module.css'
 const NextButton = (props) => {
     const onNextButtonClick = () => {
         props.nextLevelAC();
+        if (props.setZeroScore) {
+            props.setZeroScore();
+        }
+        
     }
     
 

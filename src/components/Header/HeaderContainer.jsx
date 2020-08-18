@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 const HeaderContainer = (props) => {
     return (
         <div>
-            <Header score={props.score}/>
+            <Header score={props.score} counter={props.counter}/>
         </div>
     )
 }
@@ -15,6 +15,7 @@ const HeaderContainer = (props) => {
 let mapStateToProps = (state) => {
     return {
         "score": state.warmupPage.score,
+        "counter": state.warmupPage.counter,
     }
 }
 

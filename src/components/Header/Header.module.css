@@ -45,7 +45,7 @@
     align-content: center;
 }
 
-.pannelItem:first-child {
+.currentTask {
     background-color: #00bc8c;
 }
 

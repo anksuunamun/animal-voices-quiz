@@ -4,13 +4,13 @@ import AnswersContainer from '../Answers/AnswersContainer';
 import DescriptionContainer from '../Description/DescriptionContainer';
 import { connect } from 'react-redux';
 import NextButtonContainer from '../NextButton/NextButtonContainer';
+import { setZeroScore } from '../../redux/WarmUp-reducer';
 
 
 
 
 const WarmUp = (props) => {
 
-  
   if (!props.gameOver && props.birds){
     let currentBird = props.birds[props.questionNumber];
     let answers =  props.birds.map((bird)=> { return [bird.name, bird.id]})
@@ -41,7 +41,7 @@ const WarmUp = (props) => {
     return(
       <div className="buttonWrapper">
         <div className="contentWrapper">
-          <NextButtonContainer />
+          <NextButtonContainer setZeroScore = {props.setZeroScore}/>
         </div>
       </div>
     )
@@ -60,7 +60,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    "setZeroScore": () => {
+      dispatch(setZeroScore())
+    }
   }
 }
 

@@ -13,12 +13,12 @@ const Header = (props) => {
                 <div className={styles.scorePannel}>Score: {props.score} </div>
             </div>
             <div className={`${styles.questionPannel} rounded`}>
-                <NavLink className={styles.pannelItem} to="/warmup" >Разминка</NavLink>
-                <a className={styles.pannelItem} href="/#" >Воробьиные</a>
-                <a className={styles.pannelItem} href="/#" >Лесные птицы</a>
-                <a className={styles.pannelItem} href="/#" >Певчие птицы</a>
-                <a className={styles.pannelItem} href="/#" >Хищные птицы</a>
-                <a className={styles.pannelItem} href="/#" >Морские птицы</a>
+                <div className={`${styles.pannelItem} ${props.counter===1?styles.currentTask:null}`}>Разминка</div>
+                <div className={`${styles.pannelItem} ${props.counter===2?styles.currentTask:null}`}>Воробьиные</div>
+                <div className={`${styles.pannelItem} ${props.counter===3?styles.currentTask:null}`}>Лесные птицы</div>
+                <div className={`${styles.pannelItem} ${props.counter===4?styles.currentTask:null}`}>Певчие птицы</div>
+                <div className={`${styles.pannelItem} ${props.counter===5?styles.currentTask:null}`}>Хищные птицы</div>
+                <div className={`${styles.pannelItem} ${props.counter===6?styles.currentTask:null}`}>Морские птицы</div>
             </div>
         </div>
     )
