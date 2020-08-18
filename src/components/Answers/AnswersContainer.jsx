@@ -13,6 +13,7 @@ class AnswersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
+        "isCorrect": state.warmupPage.isCorrect,
 
     }
 }

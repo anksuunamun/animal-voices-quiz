@@ -8,3 +8,11 @@
     margin-bottom:  -1px;
 
 }
+
+.wrongAnswer {
+    color: #d62c1a;
+}
+
+.corectAnswer {
+    color: #00bc8c;;
+}

@@ -52,7 +52,10 @@ export const setZeroScore = () => {
 }
 
 
+
+
 let initialState = {
+    "changeScore": true,
     "pressedAnswers": [],
     "score": 0,
     "defaultScore": 5,
@@ -142,6 +145,7 @@ const warmupReducer = (state = initialState, action) => {
             localState.birdDescription = "";
             localState.birds = birdsData[localState.counter];
             localState.counter += 1;
+            localState.changeScore=true;
           }
           if (localState.counter>6) {
             localState.isCorrect = true;
@@ -158,15 +162,16 @@ const warmupReducer = (state = initialState, action) => {
               return el === arrEl;
             })
           }
-          if(!localState.isCorrect && !checkRepeatClick(localState.pressedAnswers, localState.birdDescriptionId)) {
+          if(!localState.isCorrect && !checkRepeatClick(localState.pressedAnswers, localState.birdDescriptionId)&&localState.changeScore) {
             localState.defaultScore -= 1;
             localState.pressedAnswers.push(localState.birdDescriptionId);
             console.log(localState.pressedAnswers);
           }
-          else if (localState.isCorrect) {
+          else if (localState.isCorrect&&localState.changeScore) {
             localState.score += localState.defaultScore;
             localState.pressedAnswers=[];
             localState.defaultScore = 5;
+            localState.changeScore=false;
           }
 
           
