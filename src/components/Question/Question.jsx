@@ -4,7 +4,6 @@ import styles from './Question.module.css';
 
 
 const Question = (props) => {
-    console.log(props)
     props.setCurrentBird(props.id);
     return (
         <div className={styles.questionWrapper}>

@@ -146,6 +146,7 @@ const warmupReducer = (state = initialState, action) => {
             localState.birds = birdsData[localState.counter];
             localState.counter += 1;
             localState.changeScore=true;
+            localState.questionNumber =  randomQuestion(0, 5);
           }
           if (localState.counter>6) {
             localState.isCorrect = true;
