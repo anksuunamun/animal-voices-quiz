@@ -4,11 +4,13 @@ import { setBirdThunk } from '../../../redux/WarmUp-reducer';
 import { useState } from 'react';
 
 const Answer = (props) => {
+
     let onOptionClick = () => {
         props.setDescriptionBirdId(props.answer[1]);
         setBirdThunk(props.answer[1]);
         props.setScore();
         setClicked(true);
+        console.log(props)
     }
 
     const [clicked, setClicked] = useState(props.clicked);

@@ -5,7 +5,8 @@ import { currentBirdAC } from '../../redux/WarmUp-reducer';
 
 
 class QuestionContainer extends React.Component {
-    
+  
+   
     render() {
         
         return (

@@ -1,10 +1,10 @@
 .circle {
     font-size: 20px;
-    color: #999;
+    color: #444;
 }
 
 .optionItem {
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #444;
     margin-bottom:  -1px;
 
 }

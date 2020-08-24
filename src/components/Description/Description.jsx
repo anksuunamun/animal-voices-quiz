@@ -23,21 +23,23 @@ class Description extends React.Component {
         }
     }
   
-   
+    
     render(){ 
          if(this.state.birdDescriptionId === "" && !this.state.isCorrect) {
     
-       return(<div>
+       return(<div >
             <p>Послушайте плеер.</p>
             <p>Выберите птицу из списка</p>
         </div>)
     }
+ 
     else if (this.state.isCorrect) {
-        return(
-
-            <BirdDescription {...this.props.bird}/>
-   
-        )
+            if (this.setState.birdDescriptionId === this.props.bird.id) {
+                return (
+                    <BirdDescription {...this.state.birdDescription} />
+                )
+            }
+            return <BirdDescription {...this.state.birdDescription} />
     }
     else if (this.state.birdDescriptionId !== "" && !this.state.isCorrect) {
         return (

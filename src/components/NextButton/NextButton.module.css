@@ -1,8 +1,10 @@
 .nextButton {
     background-color:#303030;
     width: 100%;
-    height: 40px;
+    height: 34px;
     border:0px;
     font-size: 1.2em;
     color: white;
+    padding-right: 4px;
+    padding-left: 4px;
 }

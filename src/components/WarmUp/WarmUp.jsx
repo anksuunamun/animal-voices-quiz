@@ -25,12 +25,12 @@ const WarmUp = (props) => {
     <div className="answersWrapper">
       <div className="contentWrapper">
         <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers}/></div>
-        <div className="rounded blockBackgroundcolor"><DescriptionContainer /></div>
+        <div className="rounded blockBackgroundcolor borderStyle"><DescriptionContainer /></div>
       </div>
     </div>
     <div className="buttonWrapper">
-        <div className="contentWrapper">
-          <NextButtonContainer />
+        <div className="contentWrapper borderStyle rounded">
+          <NextButtonContainer className=""/>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ const WarmUp = (props) => {
   else {
     return(
       <div className="buttonWrapper">
-        <div className="contentWrapper">
+        <div className="contentWrapper borderStyle rounded">
           <NextButtonContainer setZeroScore = {props.setZeroScore}/>
         </div>
       </div>

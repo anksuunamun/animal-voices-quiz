@@ -14,7 +14,8 @@ const SET_ZERO_SCORE = "SET_ZERO_SCORE";
 export const currentBirdAC = (id) => {
   return {
       type: CURRENT_BIRD,
-      id
+      id,
+
   }
 }
 
@@ -28,7 +29,7 @@ export const birdDescriptionIdAC = (id) => {
 export const setBirdThunk = (birdId) => {
   return (dispatch) => {
     if (birdId!== this.state.currentBirdName) {
-      birdDescriptionIdAC(birdId);
+     dispatch( birdDescriptionIdAC(birdId));
     }
   }
 }

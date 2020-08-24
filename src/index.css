@@ -22,6 +22,10 @@ body {
     border-radius: 0.25rem !important;
 }
 
+.borderStyle {
+    border: 1px solid #444;
+}
+
 .roundedImage {
     border-radius: 10px;
 
@@ -29,6 +33,7 @@ body {
 
 .headerWrapper {
     padding-bottom: 25px;
+
 }
 
 .blockBackgroundcolor {

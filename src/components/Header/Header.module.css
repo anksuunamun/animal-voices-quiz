@@ -1,5 +1,6 @@
 .headerWrapper {
     color:white;
+
 }
 
 .logo {
@@ -12,7 +13,7 @@
     column-gap: 20px;
     min-height: 63px;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 23px;
     margin-bottom: 5px;
 }
 
