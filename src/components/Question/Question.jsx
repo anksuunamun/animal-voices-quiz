@@ -21,8 +21,8 @@ const Question = (props) => {
                  <div>{props.name}</div>  
                 :
                 <div>******</div> }
-                <audio controls>
-                    <source src={props.audio} type="audio/mpeg"></source>
+                <audio controls src={props.audio}>
+                    
                 </audio>
             </div>
         </div>
