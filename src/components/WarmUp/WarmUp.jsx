@@ -5,48 +5,56 @@ import DescriptionContainer from '../Description/DescriptionContainer';
 import { connect } from 'react-redux';
 import NextButtonContainer from '../NextButton/NextButtonContainer';
 import { setZeroScore } from '../../redux/WarmUp-reducer';
+import Victory from '../Victory/Victory';
 
 
 
 
 const WarmUp = (props) => {
 
-  if (!props.gameOver && props.birds){
+  if (!props.gameOver && props.birds) {
     let currentBird = props.birds[props.questionNumber];
-    let answers =  props.birds.map((bird)=> { return [bird.name, bird.id]})
-   return(
+    let answers = props.birds.map((bird) => { return [bird.name, bird.id] })
+    return (
 
-    <>
-    <div className="questionWrapper">
-        <div className="contentWrapper rounded blockBackgroundcolor">
-          <QuestionContainer {...currentBird}/>
+      <>
+        <div className="questionWrapper">
+          <div className="contentWrapper rounded blockBackgroundcolor">
+            <QuestionContainer {...currentBird} />
+          </div>
         </div>
-    </div>
-    <div className="answersWrapper">
-      <div className="contentWrapper">
-        <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers}/></div>
-        <div className="rounded blockBackgroundcolor borderStyle"><DescriptionContainer /></div>
-      </div>
-    </div>
-    <div className="buttonWrapper">
-        <div className="contentWrapper borderStyle rounded">
-          <NextButtonContainer className=""/>
+        <div className="answersWrapper">
+          <div className="contentWrapper">
+            <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers} /></div>
+            <div className="rounded blockBackgroundcolor borderStyle"><DescriptionContainer /></div>
+          </div>
         </div>
-      </div>
+        <div className="buttonWrapper">
+          <div className="contentWrapper borderStyle rounded">
+            <NextButtonContainer className="" />
+          </div>
+        </div>
 
 
-    </>
-  )}
+      </>
+    )
+  }
   else {
-    return(
-      <div className="buttonWrapper">
-        <div className="contentWrapper borderStyle rounded">
-          <NextButtonContainer setZeroScore = {props.setZeroScore}/>
+    return (
+      <div className=" contentWrapper">
+        <div className="victoryWrapper rounded blockBackgroundcolor ">
+          <Victory score={props.score} />
+          <hr/>
+          <div className="buttonWrapper">
+            <div className="borderStyle rounded">
+              <NextButtonContainer text="Попробовать ещё раз!" setZeroScore={props.setZeroScore} />
+            </div>
+          </div>
         </div>
       </div>
     )
   }
-  
+
 }
 
 const mapStateToProps = (state) => {
@@ -55,6 +63,7 @@ const mapStateToProps = (state) => {
     "birds": state.warmupPage.birds,
     "questionNumber": state.warmupPage.questionNumber,
     "gameOver": state.warmupPage.gameOver,
+    "score": state.warmupPage.score,
   }
 }
 

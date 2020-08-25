@@ -8,3 +8,7 @@
     padding-right: 4px;
     padding-left: 4px;
 }
+
+.activeButton {
+    background-color: #00bc8c;
+}
