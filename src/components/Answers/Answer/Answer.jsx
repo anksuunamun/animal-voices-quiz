@@ -4,6 +4,8 @@ import { setBirdThunk } from '../../../redux/WarmUp-reducer';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+//https://freesound.org/data/previews/448/448265_8282364-lq.mp3 correct
+//https://freesound.org/data/previews/331/331912_3248244-lq.mp3 wrong
 const Answer = (props) => {
     props.setIsClicked();
     let onOptionClick = () => {
@@ -30,6 +32,9 @@ const Answer = (props) => {
     return(
         <>
         <div className={styles.optionItem} onClick={props.isCorrect?onOptionClickAfterCorrect: onOptionClick} >
+            {correctStyle&& <audio className={styles.audioStyle} autoPlay controls src="https://freesound.org/data/previews/448/448265_8282364-lq.mp3"></audio>}
+            {wrongStyle&&<audio className={styles.audioStyle} autoPlay controls src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"> 
+            </audio>}
             <span className={`${styles.circle} ${(wrongStyle&&styles.wrongAnswer)||(correctStyle&&styles.correctAnswer)||null}
             `}>&#x25CF;</span>
             {props.answer[0]}

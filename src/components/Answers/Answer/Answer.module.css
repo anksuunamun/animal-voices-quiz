@@ -16,3 +16,7 @@
 .correctAnswer {
     color: #00bc8c;;
 }
+
+.audioStyle {
+    display: none;
+}
