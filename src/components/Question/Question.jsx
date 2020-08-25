@@ -9,6 +9,7 @@ const Question = (props) => {
     console.log(props)
     props.setCurrentBird(props.id);
  
+    
 
 
     if (props.audio!=="")
@@ -21,7 +22,7 @@ const Question = (props) => {
                  <div>{props.name}</div>  
                 :
                 <div>******</div> }
-                <audio controls src={props.audio}>
+                <audio id="pausedAudio" controls src={props.audio}>
                     
                 </audio>
             </div>
