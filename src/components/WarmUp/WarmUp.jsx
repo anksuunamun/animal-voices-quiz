@@ -25,7 +25,7 @@ const WarmUp = (props) => {
         </div>
         <div className="answersWrapper">
           <div className="contentWrapper">
-            <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers} /></div>
+            <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers} currentBirdName={props.currentBirdName}/></div>
             <div className="rounded blockBackgroundcolor borderStyle"><DescriptionContainer /></div>
           </div>
         </div>
@@ -64,6 +64,7 @@ const mapStateToProps = (state) => {
     "questionNumber": state.warmupPage.questionNumber,
     "gameOver": state.warmupPage.gameOver,
     "score": state.warmupPage.score,
+    "currentBirdName": state.warmupPage.currentBirdName,
   }
 }
 
