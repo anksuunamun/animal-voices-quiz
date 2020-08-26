@@ -6,7 +6,35 @@
 .descriptionWrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 10px;
+    column-gap: 30px;
+}
+
+.birdName {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.textDescription {
+    margin-top: 25px;
+    padding-right: 20px;
+}
+
+.speciesWrappper {
+    margin-bottom: 5px;
+}
+
+.descriptionWrapper audio {
+    margin-top: 15px;
+}
+
+.greyLine {
+    background-color: #444;
+    width: 100%;
+}
+
+.birdNameWrapper {
+    padding: 10px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -14,5 +42,8 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 10px;
+    }
+    .descriptionWrapper img {
+        justify-self: center;
     }
 }

@@ -26,7 +26,7 @@ const WarmUp = (props) => {
         <div className="answersWrapper">
           <div className="contentWrapper">
             <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers} currentBirdName={props.currentBirdName}/></div>
-            <div className="rounded blockBackgroundcolor borderStyle"><DescriptionContainer /></div>
+            <div className="rounded blockBackgroundcolor borderStyle descriptionWrap"><DescriptionContainer /></div>
           </div>
         </div>
         <div className="buttonWrapper">
@@ -46,7 +46,7 @@ const WarmUp = (props) => {
           <Victory score={props.score} />
           <hr/>
           <div className="buttonWrapper">
-            <div className="borderStyle rounded">
+            <div className="borderStyle rounded gameOverButton">
               <NextButtonContainer text="Попробовать ещё раз!" setZeroScore={props.setZeroScore} />
             </div>
           </div>

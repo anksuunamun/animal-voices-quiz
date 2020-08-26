@@ -8,14 +8,15 @@ const BirdDescription = (props) => {
             
                 <img src={props.image} alt="current bird" className="roundedImage"/>
                 <div className={styles.birdNameWrapper}>
-                    <p>{props.name}</p>
-                    <p>{props.species}</p>
-                    <audio controls>
-                    <source src={props.audio} type="audio/mpeg"></source>
-                </audio>
+                    <p className={styles.birdName}>{props.name}</p>
+                    <hr className={styles.greyLine}></hr>
+                    <p className={styles.speciesWrappper}>{props.species}</p>
+                    <hr className={styles.greyLine}></hr>
+                    <audio controls src={props.audio}>
+                    </audio>
                 </div>
             </div>
-            <p>{props.description}</p>
+            <p className={styles.textDescription}>{props.description}</p>
             </>
     )
 }

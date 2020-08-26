@@ -18,7 +18,13 @@ body {
 #root {
    
 }
-
+.buttonWrapper .gameOverButton {
+    width: 92% !important;
+    height: 52px;
+    margin: 0 auto;
+    vertical-align: middle;
+    
+}
 .rounded {
     border-radius: 0.25rem !important;
 }
@@ -31,7 +37,9 @@ body {
     border-radius: 10px;
 
 }
-
+.questionWrapper {
+    width: 100%;
+}
 .headerWrapper {
     padding-bottom: 25px;
 
@@ -42,19 +50,23 @@ body {
 }
 
 .answersWrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+
 }
 
 .answersWrapper .contentWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 30px;
 }
 
 .buttonWrapper {
     padding-bottom: 40px;
-    padding-top: 30px;
+    padding-top: 25px;
+}
+
+.descriptionWrap {
+    padding: 15px;
 }
 
 .victoryWrapper {
@@ -84,10 +96,14 @@ hr {
     width: 95%;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
     .contentWrapper {
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 742px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .contentWrapper {
+        width: 690px;
     }
 }
 
@@ -105,6 +121,9 @@ hr {
     }
     .questionWrapper {
        padding-top: 20px;
+    }
+    .contentWrapper {
+        width: 510px;
     }
     
 }

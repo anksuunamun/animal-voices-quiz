@@ -1,12 +1,20 @@
 .circle {
-    font-size: 20px;
+    font-size: 23px;
     color: #444;
+    padding-right: 15px;
 }
 
 .optionItem {
     border-bottom: 1px solid #444;
     margin-bottom:  -1px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
 
+.optionItem:hover {
+    background-color: #444;
+    cursor: pointer;
 }
 
 .wrongAnswer {
