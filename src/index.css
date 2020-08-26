@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    background-color: #222;
+    background-color: #2B2322;
     color: white;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .borderStyle {
-    border: 1px solid #444;
+    border: 1px solid #73605B;
 }
 
 .roundedImage {
@@ -46,7 +46,7 @@ body {
 }
 
 .blockBackgroundcolor {
-    background-color: #303030;
+    background-color: #392F2D;
 }
 
 .answersWrapper {
@@ -92,7 +92,7 @@ body {
 hr {
     height: 1px;
     border: none;
-    background-color: #222;
+    background-color: #2B2322;
     width: 95%;
 }
 

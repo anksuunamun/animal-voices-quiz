@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     justify-content: space-between;
-    background-color: #008966;
+    background-color: #7E26A6;
     border-color: #007c5d;
 }
 .questionPannel a {
@@ -47,7 +47,7 @@
 }
 
 .currentTask {
-    background-color: #00bc8c;
+    background-color: #AE54D8;
 }
 
 .pannelItem:first-child {
