@@ -28,8 +28,9 @@ class Description extends React.Component {
          if(this.state.birdDescriptionId === "" && !this.state.isCorrect) {
     
        return(<div >
-            <p>Послушайте плеер.</p>
-            <p>Выберите птицу из списка</p>
+            <p>Послушайте, какие звуки издают представители разных систематических единиц <i>Царства Животные</i>.</p>
+            <p>Выберите животное из списка вариантов ответа.</p>
+            <p><b>Удачи!</b></p>
         </div>)
     }
  

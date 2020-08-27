@@ -83,51 +83,51 @@ let initialState = {
     "birds" : [       
         {
           id: 1,
-          name: 'Ворон',
-          species: 'Corvus corax',
-          description: 'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
-          image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3'
+          name: 'Медведь',
+          species: 'Ursus Arctos',
+          description: 'Медведи обитают в северной Евразии и Северной Америке. Они редко нападают на людей с первого взгляда и обычно избегают людей.  В большинстве атак, приводящих к травмам, бурые медведи предшествуют атаке рычанием или фырканьем. ',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Kamchatka_Brown_Bear_near_Dvuhyurtochnoe_on_2015-07-23.jpg',
+          audio: 'https://freesound.org/data/previews/70/70333_1010254-lq.mp3'
         },
         {
           id: 2,
-          name: 'Журавль',
-          species: 'Grus grus',
-          description: 'Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».',
-          image: 'https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3'
+          name: 'Лев',
+          species: 'Panthera leo',
+          description: 'Львы способны издавать звуки, которые различаются по силе и высоте. Обычно львы ревут по ночам; звук слышен на расстоянии до 8 км. Он используется в качестве сигнала для других животных.',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/African_Lion_Safari_BRK5021_%2819804147642%29.jpg/1920px-African_Lion_Safari_BRK5021_%2819804147642%29.jpg',
+          audio: 'https://freesound.org/data/previews/212/212764_71257-lq.mp3'
         },
         {
           id: 3,
-          name: 'Ласточка',
-          species: 'Delichon urbicum',
-          description: 'Для ласточек характерно негромкое щебетание. Песни ласточек не смолкают на протяжении всего лета. Исследователи различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», «чиривит» и т.п. Ласточки любят петь дуэтом.',
-          image: 'https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3'
+          name: 'Енот',
+          species: 'Procyon lotor',
+          description: 'Еноты довольно общительныe животные, у них весьма разнообразная звуковая гамма. Используя свой голос, представители этого семейства общаются между собой, также они могут проявлять звуками свои эмоции.',
+          image: 'https://vignette.wikia.nocookie.net/lisenot/images/d/d9/-%D0%BF%D0%BE%D0%BB%D0%BE%D1%81%D0%BA%D1%83%D0%BD.jpg/revision/latest?cb=20150515121119&path-prefix=ru',
+          audio: 'http://www.terrierman.com/Sounds/raccoon2.wav'
         },
         {
           id: 4,
-          name: 'Козодой',
-          species: 'Caprimulgus europaeus',
-          description: 'Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются. ',
-          image: 'https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3'
+          name: 'Волк',
+          species: 'Canis lupus',
+          description: 'Разнообразие и диапазон частот голосовых средств волков значительно превосходят возможности абсолютного большинства животных (кроме человека и рукокрылых). Волки издают такие звуки, как вой, завывание, хныканье, ворчание, рычание, тявканье, визг, лай.',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Canis_lupus_265b.jpg',
+          audio: 'https://freesound.org/data/previews/395/395192_7495033-lq.mp3'
         },
         {
           id: 5,
-          name: 'Кукушка',
-          species: 'Cuculus canorus',
-          description: 'Кукушку назвали так из-за особенностей ее песен. Звонкое «ку-ку» не спутать ни с какой другой птицей. Кукушки не строят гнезда, их потомство выращивают другие виды пернатых, которым кукушки подбрасывают свои яйца.',
-          image: 'https://live.staticflickr.com/65535/48377838151_e15f430ec1.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501461-190616_08.13h_koekoek_brabantse%20biesbosch%20jantjesplaat_roep_1%20ex_ad%20m_ter%20plaatse%20zingend_gezien_.mp3'
+          name: 'Гиена',
+          species: 'Crocuta crocuta',
+          description: 'Исследователи обнаружили, что гиены обозначают свой социальный статус с помощью характерных звуков, напоминающих хохот или хихиканье, которые они издают обычно при драках за добычу.',
+          image: 'https://i2.wp.com/media-news.com.ua/wp-content/uploads/2020/01/Birds-Pray.jpg',
+          audio: 'http://cd.textfiles.com/sigserieswin/SOUNDS/WAV/HYENA.WAV'
         },
         {
           id: 6,
-          name: 'Синица',
-          species: 'Parus major',
-          description: 'В щебетании синиц различают более 40 различных звуковых сочетаний. Поют они практически круглый год, немного затихая только зимой. Синицы настоящие санитары леса. Одна пара синиц в период гнездования оберегает от вредителей десятки деревьев.',
-          image: 'https://live.staticflickr.com//65535//49366042493_c48c81d58d.jpg',
-          audio: 'https://www.xeno-canto.org/sounds/uploaded/RFGQDPLDEC/XC518417-Kj%C3%B8ttmeis%20XC%20Helg%C3%B8ya%20Elias%20A.%20Ryberg20200108133922_079.mp3'
+          name: 'Кошка',
+          species: 'Félis silvéstris cátus',
+          description: 'Для домашних кошек характерен звук "мяу", он имеет много разных вариаций. Например, затяжной звук, нечто среднее между «мяу» и криком, — это способ, которым кошка хочет привлечь к себе внимание.',
+          image: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Gato_enervado_pola_presencia_dun_can.jpg',
+          audio: 'https://freesound.org/data/previews/412/412017_3652520-lq.mp3'
         },
       ],
 }
