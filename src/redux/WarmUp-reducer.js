@@ -183,7 +183,7 @@ const warmupReducer = (state = initialState, action) => {
           if(!localState.isCorrect && !checkRepeatClick(localState.pressedAnswers, localState.birdDescriptionId)&&localState.changeScore) {
             localState.defaultScore -= 1;
             localState.pressedAnswers.push(localState.birdDescriptionId);
-            console.log(localState.pressedAnswers);
+           
           }
           else if (localState.isCorrect&&localState.changeScore) {
             localState.score += localState.defaultScore;

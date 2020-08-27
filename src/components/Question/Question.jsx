@@ -1,18 +1,27 @@
 import React from 'react';
 import styles from './Question.module.css';
 import unknownAnimal from '../../assets/unknownAnimal.png';
+import { useEffect } from 'react';
 
 
 
 const Question = (props) => {
-    console.log(`Правильный ответ: ${props.id}. ${props.name}`)
-    props.setCurrentBird(props.id);
- 
+    
+    useEffect( () => {props.setCurrentBird(props.id);} )
+    useEffect( () => {console.log(`Правильный ответ: ${props.id}. ${props.name}`)}, [props.id, props.name] )
+    
     
 
+    let x = document.getElementById("pausedAudio");
+    const pauseAudio = () => {
+        console.log(x)
+     }
+    
 
     if (props.audio!=="")
-   { return (
+   { 
+    
+       return (
         <div className={styles.questionWrapper}>
             {props.isCorrect? <img className="roundedImage" src = {props.image} alt={`${props.name}фото`}/> :
             <img className="roundedImage" src={unknownAnimal} alt="unknownBird"/>}
@@ -23,9 +32,20 @@ const Question = (props) => {
                 <div className={styles.birdName}>******
                     <hr className={styles.greyLine}></hr>
                 </div> }
-                <audio id="pausedAudio" controls src={props.audio}>
+
+                <div className={styles.audioWrapper}>
+                    <div className={styles.playButton} onClick={pauseAudio}></div>
+                    <audio id="pausedAudio" controls src={props.audio}>
+                    </audio>
+                </div>
+               
+               
+               
+               
+               
+                {/*<audio id="pausedAudio" controls src={props.audio}>
                     
-                </audio>
+                </audio>*/}
             </div>
         </div>
     )}

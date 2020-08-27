@@ -7,13 +7,12 @@ import { useEffect } from 'react';
 //https://freesound.org/data/previews/448/448265_8282364-lq.mp3 correct
 //https://freesound.org/data/previews/331/331912_3248244-lq.mp3 wrong
 const Answer = (props) => {
-    props.setIsClicked();
+    useEffect( ()=> {props.setIsClicked();} ) 
     let onOptionClick = () => {
         props.setDescriptionBirdId(props.answer[1]);
         setBirdThunk(props.answer[1]);
         props.setScore();
         setClicked(true);
-        console.log(props);
     }
     let onOptionClickAfterCorrect = () => {
         props.setDescriptionBirdId(props.answer[1]);

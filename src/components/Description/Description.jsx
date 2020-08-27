@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Description.module.css'
 import BirdDescription from './BirdDescription/BirdDescription';
 
 
