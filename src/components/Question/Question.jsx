@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Question.module.css';
-
+import unknownAnimal from '../../assets/unknownAnimal.png';
 
 
 
@@ -15,7 +15,7 @@ const Question = (props) => {
    { return (
         <div className={styles.questionWrapper}>
             {props.isCorrect? <img className="roundedImage" src = {props.image} alt={`${props.name}фото`}/> :
-            <img className="roundedImage" src="https://birds-quiz.netlify.app//static/media/bird.06a46938.jpg" alt="unknownBird"/>}
+            <img className="roundedImage" src={unknownAnimal} alt="unknownBird"/>}
             <div className={styles.songWrapper}>
                 {props.isCorrect? 
                  <div className={styles.birdName}>{props.name}  <hr className={styles.greyLine}></hr></div>  
