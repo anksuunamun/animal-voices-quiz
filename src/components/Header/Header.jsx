@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { NavLink } from 'react-router-dom';
-
+import logoImage from '../../assets/logo.png'
 
 
 
@@ -9,7 +9,7 @@ const Header = (props) => {
     return (
         <div className={styles.headerWrapper}>
             <div className={styles.topPannel}>
-                <img className={styles.logo} src="https://birds-quiz.netlify.app//static/media/logo.4f82cd73.svg" alt="logo"/>
+                <img className={styles.logo} src={logoImage} alt="logo"/>
                 <div className={styles.scorePannel}>Score: {props.score} </div>
             </div>
             <div className={`${styles.questionPannel} rounded`}>
