@@ -33,7 +33,7 @@ const Audio = (props) => {
             setProgress(props.currentAudio.currentTime);
         }
 
-    })
+    }, [props.currentAudio])
     useEffect(() => {
         let perc = (progress * 100) / duration;
         setSecond(perc);
