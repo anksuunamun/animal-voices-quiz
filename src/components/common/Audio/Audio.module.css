@@ -14,8 +14,11 @@
 
 .progressLine {
     height: 5px;
-    width: 725px;
+    width: 195px;
     margin-left: 20px;
+}
+.questLine {
+    width: 725px; 
 }
 
 .audioWrapper audio {
@@ -40,4 +43,40 @@
     display: flex;
     justify-content: space-between;
     font-size: 0.6em;
+}
+
+@media screen and (max-width: 1200px) {
+    .questLine {
+        width: 370px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .questLine {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .progressLine {
+        width: 391px;
+    }
+    .questLine {
+        width: 130px !important;
+    }
+    
+}
+@media screen and (max-width: 556px) {
+    .progressLine {
+        width: 314px;
+    }
+    .questLine {
+        width: 285px !important;
+    }
+}
+@media screen and (max-width: 463px) {
+    .progressLine {
+        width: 178px;
+    }
+    .questLine {
+        width: 184px !important;
+    }
 }

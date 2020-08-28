@@ -54,10 +54,15 @@ body {
 
 }
 
+.contentWrapper .answersWrap  {
+    height: 303px;
+}
+
 .answersWrapper .contentWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
+    
 }
 
 .buttonWrapper {
@@ -67,10 +72,12 @@ body {
 
 .descriptionWrap {
     padding: 15px;
+    
 }
 
+
 .victoryWrapper {
-    height: 403px;
+    height: 470px;
     vertical-align: middle;
     text-align: center;
 
@@ -101,6 +108,11 @@ hr {
         width: 742px;
     }
 }
+@media screen and (max-width: 1050px) {
+    .descriptionWrap {
+        min-height: 480px;
+    }
+}
 @media screen and (max-width: 970px) {
     .contentWrapper {
         width: 690px;
@@ -125,16 +137,79 @@ hr {
     .contentWrapper {
         width: 510px;
     } 
+    .victoryWrapper h1 {
+        font-size: 3em;
+    }
 }
 @media screen and (max-width: 556px) {
     .contentWrapper { 
-        
-    }
-    .answersWrapper .contentWrapper {
+        width: 430px !important;
     }
 
     .descriptionWrap {
         width: 400px;
-        margin-left: 10px;
+        
     }
+    .victoryWrapper h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 463px) {
+    .victoryWrapper h1 {
+        font-size: 2em;
+    }
+    html {
+        overflow-x: hidden;
+    }
+   
+    .answersWrapper .contentWrapper {
+        margin: 0;
+        
+    }
+    .descriptionWrap {
+        max-width: 265px;
+        
+        
+    }
+    .contentWrapper .answersWrap {
+        width: 297px;
+
+    }
+    .questionWrapper .contentWrapper {
+        max-width: 298px;
+        margin: 0;
+
+    }
+    .buttonWrapper .contentWrapper {
+
+        width: 290px !important;
+        padding-top: 0;
+    }
+    .buttonWrapper .borderStyle{
+        width: 290px;
+    }
+    .buttonWrapper .rounded {
+        width: 290px;
+    }
+    .buttonWrapper {
+        width: 290px;
+        padding-left: 4px;
+    }
+    .headerWrapper .contentWrapper{
+        width: 300px;
+        margin:0;
+    }
+    .victoryWrapper {
+        width: 300px;
+    }
+    .victoryWrapper button {
+        width: 200px !important;
+    }
+    .victoryWrapper .buttonWrapper .rounded {
+        width: 200px !important;
+    }
+    body{
+        width: 300px;
+        margin: 0 auto;
+    } 
 }

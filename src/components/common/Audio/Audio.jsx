@@ -90,7 +90,7 @@ const Audio = (props) => {
                     </svg>}
                 </div>
                 <div>
-                    <div className={styles.progressLine} style={lineStyle}>
+                    <div className={`${styles.progressLine} ${!props.id?styles.questLine:null}`} style={lineStyle}>
 
                         <div className={styles.circle} style={circleStyle} /*onMouseDown={(e)=>{onMouseClick(e)}} onMouseOver={(e)=>{onMouOv(e)}}*/></div>
                         <div className={styles.timeStyle}>

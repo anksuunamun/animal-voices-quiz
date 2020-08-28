@@ -42,6 +42,7 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 10px;
+        
     }
     .descriptionWrapper img {
         justify-self: center;

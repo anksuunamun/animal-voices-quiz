@@ -53,7 +53,7 @@
     }
     .songWrapper .greyLine {
         max-width: 465px ;
-        width: 465px;
+        width: 350px;
         margin-left: 0px;
     }
     .songWrapper audio {
@@ -88,6 +88,8 @@
     }
 }
 
-
-
-
+@media screen and (max-width: 463px) {
+    .songWrapper .greyLine {
+        width: 250px;
+    }
+}

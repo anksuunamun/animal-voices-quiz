@@ -25,7 +25,7 @@ const WarmUp = (props) => {
         </div>
         <div className="answersWrapper">
           <div className="contentWrapper">
-            <div className="rounded blockBackgroundcolor"><AnswersContainer answers={answers} currentBirdName={props.currentBirdName}/></div>
+            <div className="rounded blockBackgroundcolor answersWrap"><AnswersContainer answers={answers} currentBirdName={props.currentBirdName}/></div>
             <div className="rounded blockBackgroundcolor borderStyle descriptionWrap"><DescriptionContainer /></div>
           </div>
         </div>

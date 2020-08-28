@@ -29,7 +29,7 @@ const Question = (props) => {
                 <div className={styles.birdName}>******
                     <hr className={styles.greyLine}></hr>
                 </div> }
-                    <Audio audio={props.audio} setAudio = {props.setAudio} currentAudio={props.currentAudio}/>
+                    <Audio audio={props.audio} setAudio = {props.setAudio} currentAudio={props.currentAudio} className={styles.playerStyle}/>
             </div>
         </div>
     )}
