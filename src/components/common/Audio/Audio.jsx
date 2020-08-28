@@ -10,7 +10,7 @@ const Audio = (props) => {
     const [duration, setDuration] = useState(0);
     let [firstPerc, setFirst] = useState(0);
     let [secondPerc, setSecond] = useState(0);
-    const [isReplacing, setIsReplacing] = useState(false);
+  //  const [isReplacing, setIsReplacing] = useState(false);
 
     const onAudioClick = () => {
         if (playAudio) {
