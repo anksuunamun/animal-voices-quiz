@@ -1,0 +1,43 @@
+.playButton {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #AE54D8;
+    border-radius: 70px;
+    cursor: pointer;
+    
+}
+.audioWrapper {
+    display: flex;
+    align-items: center;
+
+}
+
+.progressLine {
+    height: 5px;
+    width: 725px;
+    margin-left: 20px;
+}
+
+.audioWrapper audio {
+    display:none;
+}
+.playButton svg {
+    margin: 10px;
+}
+
+.circle {
+    width:18px;
+    height: 18px;
+    background-color:#73605B;
+    border-radius: 70px;
+    position: relative;
+    bottom: 6px;
+    right: 2px;
+    cursor: pointer;
+}
+
+.timeStyle {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6em;
+}

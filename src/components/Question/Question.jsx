@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Question.module.css';
 import unknownAnimal from '../../assets/unknownAnimal.png';
 import { useEffect } from 'react';
+import Audio from '../common/Audio/Audio';
 
 
 
@@ -9,13 +10,9 @@ const Question = (props) => {
     
     useEffect( () => {props.setCurrentBird(props.id);} )
     useEffect( () => {console.log(`Правильный ответ: ${props.id}. ${props.name}`)}, [props.id, props.name] )
-    
-    
 
-    let x = document.getElementById("pausedAudio");
-    const pauseAudio = () => {
-        console.log(x)
-     }
+    
+   
     
 
     if (props.audio!=="")
@@ -32,20 +29,7 @@ const Question = (props) => {
                 <div className={styles.birdName}>******
                     <hr className={styles.greyLine}></hr>
                 </div> }
-
-                <div className={styles.audioWrapper}>
-                    <div className={styles.playButton} onClick={pauseAudio}></div>
-                    <audio id="pausedAudio" controls src={props.audio}>
-                    </audio>
-                </div>
-               
-               
-               
-               
-               
-                {/*<audio id="pausedAudio" controls src={props.audio}>
-                    
-                </audio>*/}
+                    <Audio audio={props.audio} setAudio = {props.setAudio} currentAudio={props.currentAudio}/>
             </div>
         </div>
     )}

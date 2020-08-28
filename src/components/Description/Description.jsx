@@ -36,14 +36,14 @@ class Description extends React.Component {
     else if (this.state.isCorrect) {
             if (this.setState.birdDescriptionId === this.props.bird.id) {
                 return (
-                    <BirdDescription {...this.state.birdDescription} />
+                    <BirdDescription id={this.props.bird.id} {...this.state.birdDescription} currentDescriptionAudio={this.props.currentDescriptionAudio} setAudio={this.props.setAudio}/>
                 )
             }
-            return <BirdDescription {...this.state.birdDescription} />
+            return <BirdDescription id={this.props.bird.id} {...this.state.birdDescription} currentDescriptionAudio={this.props.currentDescriptionAudio} setAudio={this.props.setAudio}/>
     }
     else if (this.state.birdDescriptionId !== "" && !this.state.isCorrect) {
         return (
-            <BirdDescription {...this.state.birdDescription} />
+            <BirdDescription id={this.props.bird.id} {...this.state.birdDescription} currentDescriptionAudio={this.props.currentDescriptionAudio} setAudio={this.props.setAudio}/>
         )
     }
   }

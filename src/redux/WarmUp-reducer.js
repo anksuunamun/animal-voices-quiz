@@ -12,6 +12,8 @@ const SET_SCORE = "SET_SCORE";
 const SET_ZERO_SCORE = "SET_ZERO_SCORE";
 const SET_IS_CLICKED = "SET_IS_CLICKED";
 const SET_STOP_CLICK = "SET_STOP_CLICK";
+const SET_AUDIO = "SET_AUDIO";
+const SET_DESCRIPTION_AUDIO = "SET_DESCRIPTION_AUDIO";
 
 export const currentBirdAC = (id) => {
   return {
@@ -65,8 +67,25 @@ export const setStopClick = () => {
   }
 }
 
+export const setAudio = (audio) => {
+  return {
+    type: SET_AUDIO,
+    audio
+  }
+}
+
+export const setDescriptionAudio = (audio) => {
+  return {
+    type: SET_DESCRIPTION_AUDIO,
+    audio
+  }
+}
+
+
 
 let initialState = {
+    "currentAudio": "",
+    "currentDescriptionAudio": "",
     "stopClick": false,
     "isClicked": false,
     "changeScore": true,
@@ -208,6 +227,16 @@ const warmupReducer = (state = initialState, action) => {
         case (SET_STOP_CLICK): {
           let localState = {...state};
           localState.stopClick = true;
+          return localState;
+        }
+        case (SET_AUDIO): {
+          let localState = {...state};
+          localState.currentAudio = action.audio;
+          return localState;
+        }
+        case (SET_DESCRIPTION_AUDIO): {
+          let localState = {...state};
+          localState.currentDescriptionAudio = action.audio;
           return localState;
         }
         default: return state;

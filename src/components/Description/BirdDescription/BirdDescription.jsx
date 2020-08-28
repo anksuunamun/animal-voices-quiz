@@ -1,8 +1,10 @@
 import React from 'react';
-import styles from './BirdDescription.module.css'
+import styles from './BirdDescription.module.css';
+import Audio from '../../common/Audio/Audio';
 
 const BirdDescription = (props) => {
     return (
+        
         <>
             <div className={styles.descriptionWrapper}>
             
@@ -12,8 +14,7 @@ const BirdDescription = (props) => {
                     <hr className={styles.greyLine}></hr>
                     <p className={styles.speciesWrappper}>{props.species}</p>
                     <hr className={styles.greyLine}></hr>
-                    <audio controls src={props.audio}>
-                    </audio>
+                    <Audio audio={props.audio} id={props.id} currentAudio={props.currentDescriptionAudio} setAudio ={props.setAudio}/>
                 </div>
             </div>
             <p className={styles.textDescription}>{props.description}</p>
