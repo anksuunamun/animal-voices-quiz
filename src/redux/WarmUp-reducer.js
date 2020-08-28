@@ -19,7 +19,6 @@ export const currentBirdAC = (id) => {
   return {
       type: CURRENT_BIRD,
       id,
-
   }
 }
 

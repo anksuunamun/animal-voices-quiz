@@ -13,7 +13,6 @@ const Audio = (props) => {
     const [isReplacing, setIsReplacing] = useState(false);
 
     const onAudioClick = () => {
-
         if (playAudio) {
             props.currentAudio.play();
             setPlayAudio(false);
@@ -22,9 +21,6 @@ const Audio = (props) => {
             props.currentAudio.pause();
             setPlayAudio(true);
         }
-
-
-
     }
 
     useEffect(() => {
@@ -45,7 +41,7 @@ const Audio = (props) => {
     }, [progress, duration])
 
     const onLoad = () => {
-            props.setAudio(document.getElementById(props.id||"pausedAudio"))
+        props.setAudio(document.getElementById(props.id || "pausedAudio"))
     }
 
     const onCurrentTimeChange = () => {
@@ -56,19 +52,19 @@ const Audio = (props) => {
         setDuration(props.currentAudio.duration);
     }
 
-   /* const onMouseClick = (e) => {
-        console.log("1");
-        console.log(e.clientX)
-
-        setIsReplacing(true);
-    } 
-
-    const onMouOv = (e) => {
-        if (isReplacing) {
-            firstPerc = e.clientX;
-            secondPerc = e.clientX;
-        }
-    } */
+    /* const onMouseClick = (e) => {
+         console.log("1");
+         console.log(e.clientX)
+ 
+         setIsReplacing(true);
+     } 
+ 
+     const onMouOv = (e) => {
+         if (isReplacing) {
+             firstPerc = e.clientX;
+             secondPerc = e.clientX;
+         }
+     } */
 
     const lineStyle = {
         background: 'linear-gradient(to right, #AE54D8 0%, #7E26A6 ' + firstPerc + '%, #73605B ' + secondPerc + '%, #73605B 100% )',
@@ -98,18 +94,18 @@ const Audio = (props) => {
 
                         <div className={styles.circle} style={circleStyle} /*onMouseDown={(e)=>{onMouseClick(e)}} onMouseOver={(e)=>{onMouOv(e)}}*/></div>
                         <div className={styles.timeStyle}>
-                            <div>{progress ? ("00:"+(((progress).toFixed(0)).toString(10).length === 1 ? "0" + ((progress).toFixed(0)) :
-                             ((progress).toFixed(0)))) : 
-                            "00:00"}
+                            <div>{progress ? ("00:" + (((progress).toFixed(0)).toString(10).length === 1 ? "0" + ((progress).toFixed(0)) :
+                                ((progress).toFixed(0)))) :
+                                "00:00"}
                             </div>
-                             <div>{duration?(
-                             duration<=59? ("00:"+(((duration).toFixed(0)).toString(10).length === 1 ? "0" + ((duration).toFixed(0)) :
-                             ((duration).toFixed(0)))):
-                             ("0"+ Math.floor(duration/60)+ ":"+ ((Math.floor(duration-60).toString(10).length===1?("0"+Math.floor(duration-60)):Math.floor(duration-60))))
-                             ): "00:00"}</div>
+                            <div>{duration ? (
+                                duration <= 59 ? ("00:" + (((duration).toFixed(0)).toString(10).length === 1 ? "0" + ((duration).toFixed(0)) :
+                                    ((duration).toFixed(0)))) :
+                                    ("0" + Math.floor(duration / 60) + ":" + ((Math.floor(duration - 60).toString(10).length === 1 ? ("0" + Math.floor(duration - 60)) : Math.floor(duration - 60))))
+                            ) : "00:00"}</div>
                         </div>
                     </div></div>
-                <audio id={props.id?props.id:"pausedAudio"} controls src={props.audio} onLoadedData={onLoad} onTimeUpdate={onCurrentTimeChange} onDurationChange={onDurCh}>
+                <audio id={props.id ? props.id : "pausedAudio"} controls src={props.audio} onLoadedData={onLoad} onTimeUpdate={onCurrentTimeChange} onDurationChange={onDurCh}>
                 </audio>
             </div>
 
