@@ -1,0 +1,95 @@
+.questionWrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    font-size: 1.3em;
+    height: 155px;
+    align-content: center;
+    column-gap: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    align-items: center;
+}
+
+.questionWrapper img {
+    margin-left: 15px;
+    justify-self: center;
+    width: 200px;
+    height: 155px;
+    
+
+}
+.birdName {
+    height: 45px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.questionWrapper audio {
+    height: 78px;
+}
+
+.songWrapper {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    max-width: 790px;
+   
+}
+
+.greyLine {
+    background-color: #73605B;
+    width: 100%;
+    margin-top: 20px;
+ 
+}
+
+ @media screen and (max-width: 556px) {
+    .questionWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        height: 315px;
+        justify-items: center;
+        max-width: 505px;
+    }
+    .songWrapper .greyLine {
+        max-width: 465px ;
+        width: 350px;
+        margin-left: 0px;
+    }
+    .songWrapper audio {
+        max-width: 465px !important;
+        
+    }
+    .songWrapper {
+        max-width: 475px !important;
+        padding-right: 0px !important;
+    }
+    .songWrapper .birdName {
+        text-align: center;
+    }
+} 
+
+@media screen and (max-width: 1200px) {
+    .songWrapper {
+        padding-right: 45px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .songWrapper {
+        max-width: 198px;
+    }
+    .greyLine {
+        max-width: 198px;
+        margin-left: 0px;
+    }
+    .songWrapper audio {
+        max-width: 198px;
+    }
+}
+
+@media screen and (max-width: 463px) {
+    .songWrapper .greyLine {
+        width: 250px;
+    }
+}

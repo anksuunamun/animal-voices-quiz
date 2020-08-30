@@ -1,0 +1,30 @@
+.circle {
+    font-size: 23px;
+    color: #73605B;
+    padding-right: 15px;
+}
+
+.optionItem {
+    border-bottom: 1px solid #73605B;
+    margin-bottom:  -1px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.optionItem:hover {
+    background-color: #73605B;
+    cursor: pointer;
+}
+
+.wrongAnswer {
+    color: #d62c1a;
+}
+
+.correctAnswer {
+    color: #AE54D8;;
+}
+
+.audioStyle {
+    display: none;
+}

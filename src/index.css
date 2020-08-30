@@ -1,0 +1,217 @@
+html, body {
+    margin: 0;
+    background-color: #2B2322;
+    color: white;
+}
+
+body {
+  font-family: 'Lato', sans-serif; 
+ /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+
+}
+
+.contentWrapper {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+#root {
+   
+}
+.buttonWrapper .gameOverButton {
+    width: 92% !important;
+    height: 52px;
+    margin: 0 auto;
+    vertical-align: middle;
+    
+}
+.rounded {
+    border-radius: 0.25rem !important;
+}
+
+.borderStyle {
+    border: 1px solid #73605B;
+}
+
+.roundedImage {
+    border-radius: 10px;
+
+}
+.questionWrapper {
+    width: 100%;
+}
+.headerWrapper {
+    padding-bottom: 25px;
+
+}
+
+.blockBackgroundcolor {
+    background-color: #392F2D;
+}
+
+.answersWrapper {
+    padding-top: 25px;
+
+}
+
+.contentWrapper .answersWrap  {
+    height: 303px;
+}
+
+.answersWrapper .contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    
+}
+
+.buttonWrapper {
+    padding-bottom: 40px;
+    padding-top: 25px;
+}
+
+.descriptionWrap {
+    padding: 15px;
+    
+}
+
+
+.victoryWrapper {
+    height: 470px;
+    vertical-align: middle;
+    text-align: center;
+
+}
+.victoryWrapper h1 {
+    font-size: 5em;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    padding-top: 64px;
+}
+.victoryWrapper p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+
+hr {
+    height: 1px;
+    border: none;
+    background-color: #2B2322;
+    width: 95%;
+}
+
+@media screen and (max-width: 1200px) {
+    .contentWrapper {
+        width: 742px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .descriptionWrap {
+        min-height: 480px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .contentWrapper {
+        width: 690px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .contentWrapper {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .answersWrapper .contentWrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    .questionWrapper {
+       padding-top: 20px;
+    }
+    .contentWrapper {
+        width: 510px;
+    } 
+    .victoryWrapper h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 556px) {
+    .contentWrapper { 
+        width: 430px !important;
+    }
+
+    .descriptionWrap {
+        width: 400px;
+        
+    }
+    .victoryWrapper h1 {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 463px) {
+    .victoryWrapper h1 {
+        font-size: 2em;
+    }
+    html {
+        overflow-x: hidden;
+    }
+   
+    .answersWrapper .contentWrapper {
+        margin: 0;
+        
+    }
+    .descriptionWrap {
+        max-width: 265px;
+        
+        
+    }
+    .contentWrapper .answersWrap {
+        width: 297px;
+
+    }
+    .questionWrapper .contentWrapper {
+        max-width: 298px;
+        margin: 0;
+
+    }
+    .buttonWrapper .contentWrapper {
+
+        width: 290px !important;
+        padding-top: 0;
+    }
+    .buttonWrapper .borderStyle{
+        width: 290px;
+    }
+    .buttonWrapper .rounded {
+        width: 290px;
+    }
+    .buttonWrapper {
+        width: 290px;
+        padding-left: 4px;
+    }
+    .headerWrapper .contentWrapper{
+        width: 300px;
+        margin:0;
+    }
+    .victoryWrapper {
+        width: 300px;
+    }
+    .victoryWrapper button {
+        width: 200px !important;
+    }
+    .victoryWrapper .buttonWrapper .rounded {
+        width: 200px !important;
+    }
+    body,html{
+        width: 300px;
+        margin: 0 auto;
+        margin-left: 60px;
+    } 
+}
+

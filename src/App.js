@@ -1,11 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HeaderContainer from './components/Header/HeaderContainer';
+import {  BrowserRouter } from 'react-router-dom';
+import WarmUp from './components/WarmUp/WarmUp';
 
-function App() {
-  return (
-    <div></div>
-  );
+
+
+const App = (props) => {
+  return(
+    <>
+    <BrowserRouter>
+      <div className="headerWrapper">
+        <div className="contentWrapper">
+          <HeaderContainer />
+        </div>
+      </div>
+      <WarmUp />
+      
+    </BrowserRouter>
+    </>
+  )
 }
+
 
 export default App;
