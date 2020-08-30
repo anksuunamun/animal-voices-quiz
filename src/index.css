@@ -208,8 +208,10 @@ hr {
     .victoryWrapper .buttonWrapper .rounded {
         width: 200px !important;
     }
-    body{
+    body,html{
         width: 300px;
         margin: 0 auto;
+        margin-left: 60px;
     } 
 }
+

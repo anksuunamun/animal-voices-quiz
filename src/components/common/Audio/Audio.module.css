@@ -45,6 +45,69 @@
     font-size: 0.6em;
 }
 
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    position: relative;
+    top: 23px;
+    left: 20px;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+    height: 15px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: #AE54D8;
+    cursor: pointer;
+    margin-top: -5px;
+    border: 1px solid #2B2322
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: rgb(115, 96, 91);
+    border-radius: 1.3px;
+    border: 1px solid #2B2322
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    border: 1px solid #2B2322;
+  }
+  
+  input[type=range]::-ms-fill-lower {
+    background: #AE54D8;
+    height: 15px;
+  }
+
+  input[type=range]::-ms-fill-upper {
+    background: rgb(115, 96, 91);
+    height: 15px;
+  }
+
+
+
+
 @media screen and (max-width: 1200px) {
     .questLine {
         width: 370px;

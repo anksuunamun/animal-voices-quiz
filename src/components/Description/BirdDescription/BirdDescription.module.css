@@ -37,6 +37,10 @@
     padding: 10px;
 }
 
+.withoutDescription {
+    
+}
+
 @media screen and (max-width: 1050px) {
     .descriptionWrapper {
         display: grid;

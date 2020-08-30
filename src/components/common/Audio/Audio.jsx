@@ -10,7 +10,10 @@ const Audio = (props) => {
     const [duration, setDuration] = useState(0);
     let [firstPerc, setFirst] = useState(0);
     let [secondPerc, setSecond] = useState(0);
-  //  const [isReplacing, setIsReplacing] = useState(false);
+    let [audioVolume, setAudioVolume] = useState(1);
+   
+
+    //  const [isReplacing, setIsReplacing] = useState(false);
 
     const onAudioClick = () => {
         if (playAudio) {
@@ -21,7 +24,16 @@ const Audio = (props) => {
             props.currentAudio.pause();
             setPlayAudio(true);
         }
+        
     }
+    useEffect( ()=> {
+        if(props.isCorrect) {
+            setPlayAudio(true);
+        }
+    }, [props.isCorrect] )
+    
+
+    
 
     useEffect(() => {
         if (props.currentAudio) { setDuration(props.currentAudio.duration); }
@@ -41,7 +53,10 @@ const Audio = (props) => {
     }, [progress, duration])
 
     const onLoad = () => {
-        props.setAudio(document.getElementById(props.id || "pausedAudio"))
+        props.setAudio(document.getElementById(props.id || "pausedAudio"));
+        if (!props.id) {
+            setPlayAudio(true)
+        }
     }
 
     const onCurrentTimeChange = () => {
@@ -65,6 +80,17 @@ const Audio = (props) => {
              secondPerc = e.clientX;
          }
      } */
+     useEffect( () => {
+        if (duration===progress){
+            setPlayAudio(true);
+        }
+     }, [duration, progress] )
+     const onCh = () => {
+         if (duration===progress){
+             setPlayAudio(true);
+         }
+     }
+ 
 
     const lineStyle = {
         background: 'linear-gradient(to right, #AE54D8 0%, #7E26A6 ' + firstPerc + '%, #73605B ' + secondPerc + '%, #73605B 100% )',
@@ -74,23 +100,27 @@ const Audio = (props) => {
         left: firstPerc + '%',
     }
 
-
+ const onVolCh = () => {
+        setAudioVolume(props.currentAudio.volume);
+    } 
+    const onVolumeCh = () => {
+        props.id?props.currentAudio.volume=document.getElementById("audioRange2").value: 
+        props.currentAudio.volume=document.getElementById("audioRange").value;
+    }
     if (true) {
         return (
 
             <div className={styles.audioWrapper}>
-                <div className={styles.playButton} onClick={onAudioClick}>
+                <div className={styles.playButton} onClick={onAudioClick} onChange={onCh}>
 
-                    {playAudio && <svg viewBox="-200 0 1200 1000">
+                   { ((playAudio||(duration===progress)) && <svg viewBox="-200 0 1200 1000">
                         <path fill="#AE54D8" d="M96.51 11.97c-31.23 8.05-53.26 32.76-63.42 71.27-3.45 12.84-3.64 29.7-3.64 416.71s.19 403.87 3.64 416.71c16.09 60.74 61.69 86.03 120.9 67.25 9-2.87 53.65-25.1 116.49-58.24 56.14-29.51 221.29-116.3 367.28-192.93 145.99-76.64 271.29-143.31 278.38-148.1 39.28-25.68 59.59-63.04 53.26-97.52-4.79-26.63-24.33-53.07-52.88-71.65C892 399.37 172.58 22.32 154.95 16.38c-18.97-6.33-43.3-8.24-58.44-4.41z"></path>
-                    </svg>}
-
-                    {!playAudio && <svg viewBox="0 0 47.607 47.607">
+                    </svg>)||(!playAudio && <svg viewBox="0 0 47.607 47.607">
                         <path fill="#AE54D8" d="M17.991 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345zM42.877 40.976a6.631 6.631 0 01-13.262 0V6.631a6.631 6.631 0 0113.262 0v34.345z"></path>
-                    </svg>}
+                    </svg>)}
                 </div>
                 <div>
-                    <div className={`${styles.progressLine} ${!props.id?styles.questLine:null}`} style={lineStyle}>
+                    <div className={`${styles.progressLine} ${!props.id ? styles.questLine : null}`} style={lineStyle}>
 
                         <div className={styles.circle} style={circleStyle} /*onMouseDown={(e)=>{onMouseClick(e)}} onMouseOver={(e)=>{onMouOv(e)}}*/></div>
                         <div className={styles.timeStyle}>
@@ -104,8 +134,14 @@ const Audio = (props) => {
                                     ("0" + Math.floor(duration / 60) + ":" + ((Math.floor(duration - 60).toString(10).length === 1 ? ("0" + Math.floor(duration - 60)) : Math.floor(duration - 60))))
                             ) : "00:00"}</div>
                         </div>
-                    </div></div>
-                <audio id={props.id ? props.id : "pausedAudio"} controls src={props.audio} onLoadedData={onLoad} onTimeUpdate={onCurrentTimeChange} onDurationChange={onDurCh}>
+                    </div>
+                    {props.id?<input id="audioRange2" type="range" min="0" max="1" step="any" value={props.currentAudio.volume||audioVolume} onChange={onVolumeCh}></input>:
+                <input id="audioRange" type="range" min="0" max="1" step="any" value={props.currentAudio.volume||audioVolume} onChange={onVolumeCh}></input>}
+                </div>
+                
+                
+
+                <audio className={styles.audioVol} id={props.id ? props.id : "pausedAudio"} controls src={props.audio} onLoadedData={onLoad} onTimeUpdate={onCurrentTimeChange} onDurationChange={onDurCh} onVolumeChange={onVolCh}>
                 </audio>
             </div>
 
